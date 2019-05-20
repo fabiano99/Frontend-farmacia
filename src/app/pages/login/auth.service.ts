@@ -9,22 +9,30 @@ import { LoginService } from './login.service';
 })
 export class AuthService {
 
-  private login: Login = new Login();
-
   private loginAutenticado: boolean = false;
 
   mostrarMenu = new EventEmitter<boolean>();
 
+  private loginAtutenticadoUser: boolean = false;
+
+  mostrarMenuUser = new EventEmitter<boolean>();
+
   constructor(
     private router: Router,
-    private service: LoginService
   ) { }
 
   fazerLogin(login: Login) {
     if (login != null) {
-      this.loginAutenticado = true;
-      this.mostrarMenu.emit(true);
-      this.router.navigate(['/admin']);
+      if (login.status === 'admin') {
+        this.loginAutenticado = true;
+        this.mostrarMenu.emit(true);
+        this.router.navigate(['/admin']);
+      }
+      if (login.status === 'user') {
+        this.loginAtutenticadoUser = true;
+        this.mostrarMenuUser.emit(true);
+        this.router.navigate(['/user']);
+      }
     }
     else {
       this.loginAutenticado = false;
@@ -36,4 +44,9 @@ export class AuthService {
   loginAuth() {
     return this.loginAutenticado;
   }
+
+  loginAuthUser() {
+    return this.loginAtutenticadoUser;
+  }
 }
+
