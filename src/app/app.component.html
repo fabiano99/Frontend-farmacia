@@ -1,2 +1,8 @@
+<nav *ngIf="mostrarMenu">
+    <app-navbar-admin></app-navbar-admin>
+</nav>
 
+<nav *ngIf="mostrarMenuUser">
+    <app-navbar-user></app-navbar-user>
+</nav>
 <router-outlet></router-outlet>

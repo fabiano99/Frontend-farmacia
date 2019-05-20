@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
       user = u;
       this.AuthService.fazerLogin(user);
     })
+
+    this.AuthService.fazerLogin(null);
   }
 
   loginAuth() {
