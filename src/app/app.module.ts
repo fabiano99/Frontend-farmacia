@@ -11,13 +11,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { AdminComponent } from './pages/admin/admin.component';
 import { UserComponent } from './pages/user/user.component';
+import { NavbarUserComponent } from './pages/user/navbar-user/navbar-user.component';
+import { NavbarAdminComponent } from './pages/admin/navbar-admin/navbar-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
+    NavbarUserComponent,
+    NavbarAdminComponent
   ],
   imports: [
     BrowserModule,
