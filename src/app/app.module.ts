@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,8 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { UserComponent } from './pages/user/user.component';
 import { NavbarUserComponent } from './pages/user/navbar-user/navbar-user.component';
 import { NavbarAdminComponent } from './pages/admin/navbar-admin/navbar-admin.component';
+import { LabsFormComponent } from './pages/labs/labs-form/labs-form.component';
+import { LabsListComponent } from './pages/labs/labs-list/labs-list.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,18 @@ import { NavbarAdminComponent } from './pages/admin/navbar-admin/navbar-admin.co
     AdminComponent,
     UserComponent,
     NavbarUserComponent,
-    NavbarAdminComponent
+    NavbarAdminComponent,
+    LabsFormComponent,
+    LabsListComponent,
+    LabsFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    routing
+    routing,
+    ReactiveFormsModule
   ],
   providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
