@@ -32,7 +32,7 @@ export class LabsFormComponent implements OnInit {
     });
 
     this.formAddress = fb.group({
-      rua: [],
+      logradouro: [],
       cep: ['', {updateOn: 'blur'}],
       cidade: [],
       uf: [],
@@ -45,7 +45,7 @@ export class LabsFormComponent implements OnInit {
       let address;
       address = addressService.getAddress(this.formAddress.get("cep").value).subscribe(data => {
         console.log("Data => ", data)
-        this.formAddress.get('rua').setValue(data.logradouro);
+        this.formAddress.get('logradouro').setValue(data.logradouro);
         this.formAddress.get('bairro').setValue(data.bairro);
         this.formAddress.get('cidade').setValue(data.localidade);
         this.formAddress.get('uf').setValue(data.uf);

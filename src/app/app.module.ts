@@ -15,6 +15,7 @@ import { NavbarUserComponent } from './pages/user/navbar-user/navbar-user.compon
 import { NavbarAdminComponent } from './pages/admin/navbar-admin/navbar-admin.component';
 import { LabsFormComponent } from './pages/labs/labs-form/labs-form.component';
 import { LabsListComponent } from './pages/labs/labs-list/labs-list.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LabsListComponent } from './pages/labs/labs-list/labs-list.component';
     NavbarAdminComponent,
     LabsFormComponent,
     LabsListComponent,
-    LabsFormComponent
+    LabsFormComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

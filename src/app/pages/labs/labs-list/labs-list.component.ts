@@ -9,7 +9,9 @@ import {Route, Router} from "@angular/router";
 })
 export class LabsListComponent implements OnInit {
 
+
   laboratorios: Array<any> = [];
+
   constructor(private labsService: LabsService, private router: Router) { }
 
   ngOnInit() {
@@ -21,6 +23,9 @@ export class LabsListComponent implements OnInit {
     })
   }
 
+  add() {
+    this.router.navigate(['/labs/new_record']);
+  }
   editar(lab_id) {
     console.log(lab_id);
     this.router.navigate([`/labs/${lab_id}`])
@@ -30,4 +35,7 @@ export class LabsListComponent implements OnInit {
     this.labsService.removeLabs(lab_id);
   }
 
+  gerarImg() {
+    return  `https://picsum.photos/1366/500?random&t=${Math.random()}`;
+  }
 }
